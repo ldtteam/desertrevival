@@ -55,15 +55,3 @@ Bring Life back into the Desert
     versionRange="[1.20,1.21)"
     ordering="NONE"
     side="BOTH"
-[[dependencies.desertrevival]]
-     modId="blockui"
-     mandatory=true
-     versionRange="[0.0.59-ALPHA,)"
-     ordering="AFTER"
-     side="BOTH"
-[[dependencies.desertrevival]]
-    modId="structurize"
-    mandatory=true
-    versionRange="[1.19-1.0.420-ALPHA, )"
-    ordering="AFTER"
-    side="BOTH"

@@ -1,0 +1,45 @@
+{
+  "feature": "minecraft:trees_birch_and_oak",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": {
+        "type": "minecraft:weighted_list",
+        "distribution": [
+          {
+            "data": 50,
+            "weight": 9
+          },
+          {
+            "data": 51,
+            "weight": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:surface_water_depth_filter",
+      "max_water_depth": 0
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR"
+    },
+    {
+      "type": "minecraft:biome"
+    },
+    {
+      "type": "desertrevival:near_biome_2d",
+      "at_surface": true,
+      "biome": "#minecraft:is_river",
+      "block_step": 2,
+      "max_distance": 32
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}
