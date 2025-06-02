@@ -1,0 +1,5 @@
+{
+  "type": "desertrevival:hot_rivers_biome_modifier",
+  "features": "desertrevival:near_river_trees",
+  "step": "vegetal_decoration"
+}
