@@ -13,9 +13,10 @@ import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class DRBiomeModifiers {
-    public static final Map<ResourceKey<BiomeModifier>, BiomeModifierFactory> BIOME_MODIFIERS_FACTORIES = new Reference2ObjectOpenHashMap<>();
+    public static final Map<ResourceKey<BiomeModifier>, BiomeModifierFactory> BIOME_MODIFIERS_FACTORIES = new ConcurrentHashMap<>();
 
     public static final ResourceKey<DRHotRiversBiomeModifier> JUNGLE_HOT_RIVERS_BIOME_MODIFIER = createBiomeModifier("jungle_hot_rivers_biome_modifier", placedFeatureHolderGetter -> new DRHotRiversBiomeModifier(HolderSet.direct(placedFeatureHolderGetter.getOrThrow(DRPlacedFeatures.NEAR_RIVER_JUNGLE_TREES)), GenerationStep.Decoration.VEGETAL_DECORATION));
 
