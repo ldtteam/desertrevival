@@ -11,23 +11,30 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ModifiableBiomeInfo;
 
-public record DRHotRiversBiomeModifier(HolderSet<PlacedFeature> features, GenerationStep.Decoration step) implements BiomeModifier {
+public record DRHotRiversBiomeModifier(
+    HolderSet<PlacedFeature> features,
+    GenerationStep.Decoration step) implements BiomeModifier
+{
     public static final Codec<DRHotRiversBiomeModifier> CODEC = RecordCodecBuilder.create((instance) -> instance.group(
-            PlacedFeature.LIST_CODEC.fieldOf("features").forGetter(DRHotRiversBiomeModifier::features),
-            GenerationStep.Decoration.CODEC.fieldOf("step").forGetter(DRHotRiversBiomeModifier::step)
+        PlacedFeature.LIST_CODEC.fieldOf("features").forGetter(DRHotRiversBiomeModifier::features),
+        GenerationStep.Decoration.CODEC.fieldOf("step").forGetter(DRHotRiversBiomeModifier::step)
     ).apply(instance, DRHotRiversBiomeModifier::new));
 
-
     @Override
-    public Codec<? extends BiomeModifier> codec() {
+    public Codec<? extends BiomeModifier> codec()
+    {
         return DRBiomeModifierSerializers.HOT_RIVERS_BIOME_MODIFIER.get();
     }
 
     @Override
-    public void modify(Holder<Biome> holder, Phase phase, ModifiableBiomeInfo.BiomeInfo.Builder builder) {
-        if (phase == Phase.ADD) {
-            if (holder.is(Tags.Biomes.IS_DESERT) || holder.is(Tags.Biomes.IS_HOT)) {
-                for (Holder<PlacedFeature> feature : features) {
+    public void modify(Holder<Biome> holder, Phase phase, ModifiableBiomeInfo.BiomeInfo.Builder builder)
+    {
+        if (phase == Phase.ADD)
+        {
+            if (holder.is(Tags.Biomes.IS_DESERT) || holder.is(Tags.Biomes.IS_SANDY))
+            {
+                for (Holder<PlacedFeature> feature : features)
+                {
                     builder.getGenerationSettings().addFeature(step, feature);
                 }
             }

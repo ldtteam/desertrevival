@@ -60,10 +60,6 @@ public class NearBiomePlacementModifier2D extends PlacementModifier {
         int spiralIteratorSize = this.maxDistance / this.blockStep;
         int[][][] spiral = SPIRAL_CACHE.computeIfAbsent(spiralIteratorSize, k -> spiral2D(spiralIteratorSize)); // This iterates from the center outwards in a spiral pattern, allowing us to find the nearest biome efficiently.
 
-        if (!level.getBiome(blockPos).is(BiomeTags.HAS_DESERT_PYRAMID))
-        {
-            return Stream.empty();
-        }
         BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
 
         for (int[][] xzOffsets : spiral) {
