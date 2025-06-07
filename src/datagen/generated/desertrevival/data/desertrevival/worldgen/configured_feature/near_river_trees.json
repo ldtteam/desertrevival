@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "minecraft:oak_bees_0002",
+    "features": [
+      {
+        "chance": 0.1,
+        "feature": "minecraft:fancy_oak_bees_0002"
+      },
+      {
+        "chance": 0.1,
+        "feature": "minecraft:flower_flower_forest"
+      },
+      {
+        "chance": 0.8,
+        "feature": "desertrevival:palm_tree_1"
+      },
+      {
+        "chance": 0.1,
+        "feature": "minecraft:pile_ice"
+      }
+    ]
+  }
+}

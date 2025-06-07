@@ -29,7 +29,7 @@ public class DRPlacedFeatures {
 
 
     public static final ResourceKey<PlacedFeature> NEAR_RIVER_JUNGLE_TREES = createPlacedFeature("near_river_trees", VegetationFeatures.TREES_BIRCH_AND_OAK, () -> Util.make(new ArrayList<>(), list -> {
-        list.addAll(VegetationPlacements.treePlacement(PlacementUtils.countExtra(50, 0.1F, 1)));
+        list.addAll(VegetationPlacements.treePlacement(PlacementUtils.countExtra(500, 0.1F, 1)));
         list.add(new NearBiomePlacementModifier2D(2, 32, true, Either.right(BiomeTags.IS_RIVER))); // Look for rivers within 32 blocks with 2 block steps on the horizontal plane at the world surface
         list.add(BiomeFilter.biome());
     }));

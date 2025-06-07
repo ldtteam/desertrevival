@@ -8,6 +8,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
@@ -59,6 +60,10 @@ public class NearBiomePlacementModifier2D extends PlacementModifier {
         int spiralIteratorSize = this.maxDistance / this.blockStep;
         int[][][] spiral = SPIRAL_CACHE.computeIfAbsent(spiralIteratorSize, k -> spiral2D(spiralIteratorSize)); // This iterates from the center outwards in a spiral pattern, allowing us to find the nearest biome efficiently.
 
+        if (!level.getBiome(blockPos).is(BiomeTags.HAS_DESERT_PYRAMID))
+        {
+            return Stream.empty();
+        }
         BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
 
         for (int[][] xzOffsets : spiral) {
