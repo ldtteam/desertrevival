@@ -18,7 +18,7 @@ license="gpl"
 modId="desertrevival" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
 # see the associated build.gradle script for how to populate this completely automatically during a build
-version="${version}" #mandatory
+version="0.01" #mandatory
  # A display name for the mod
 displayName="Desert-Revival" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
