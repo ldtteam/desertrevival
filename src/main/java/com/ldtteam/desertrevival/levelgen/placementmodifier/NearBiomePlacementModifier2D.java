@@ -81,7 +81,7 @@ public class NearBiomePlacementModifier2D extends PlacementModifier {
                     }
                 } else {
                     TagKey<Biome> biomeTag = this.biome.right().orElseThrow();
-                    if (level.getBiome(mutable).is(biomeTag)) {
+                    if (level.getBiome(mutable).is(biomeTag) && level.getBlockState(mutable.below()).getBlock() == Blocks.SAND && level.getBlockState(mutable).isAir()) {
                         if (!FMLLoader.isProduction()) {
                             // Debugging output to verify the biome match
                             System.out.println("Found nearby matching biome tag: " + biomeTag.location() + " at " + mutable + "for position " + blockPos);
